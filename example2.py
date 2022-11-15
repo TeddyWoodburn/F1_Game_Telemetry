@@ -20,15 +20,14 @@ while True:
 
     # This generates a list of all the types of simpleEvents 
     # currentState.SimpleEvents is a list of packets.PacketSimpleEvent
-    simpleEventsList = [currentState.SimpleEvents[i].m_eventStringCode for i in range(len(currentState.SimpleEvents))]
-
-    # Check if there is a lights out event in our simpleEventList
-    if defs.EventStringCodes.LIGHTS_OUT in simpleEventsList:
-        print("Lights out!")
-        break
+    simpleEventsList = [event.m_eventStringCode for event in currentState.SimpleEvents]
     
     # Update the number of lights showing if it has changed
     if numLights != previousLightsNum:
         print("O" * numLights)
         previousLightsNum = numLights
-
+        
+    # Check if there is a lights out event in our simpleEventList
+    if defs.EventStringCodes.LIGHTS_OUT in simpleEventsList:
+        print("Lights out!")
+        break
