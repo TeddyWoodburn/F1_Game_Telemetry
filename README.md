@@ -8,3 +8,11 @@ In the F1 game navigate to Telemetry Settings and set the following values:
   - UDP Port: 20777
   - UDP Send Rate: Higher is better
   - UDP Format: 2021
+  
+ ## Installing the package
+ Install with pip: `pip install F1-2021-Telemetry`
+ 
+ ## Using the package
+ Import the currentState object: `from F1_2021_Telemetry.telemetry import currentState`
+ This is continually updated while the game is running.
+ 
